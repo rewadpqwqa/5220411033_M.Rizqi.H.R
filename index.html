@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Online</title>
+
+<link rel = "stylesheet" href = "Style.css">
+
+</head>
+<body>
+
+    <div class   = "topnav">
+        <a class = "active" href = "#Home"> Home </a>
+        <a href  = "#Market">  Market </a>
+        <a href  = "#Cart"> Cart </a>
+        <a href  = "#About"> About </a>
+        <a href  = "#Contact"> Contact </a>
+    </div>
+
+    <i>
+        <img src = "Gambar/Logo.png">
+    </i>
+
+    <h1>
+        FUTURE MARKET 
+    </h1>
+
+    <h2>
+        menjual berbagai macam teknologi terbaru dan original seperti laptop, aksesoris, parts, handphone, dan servicep
+    </h2>
+
+
+    <h1>
+        Market
+    </h1>
+
+    <table>
+        <tr>
+            <th>Nama</th>
+            <th>Spesifikasi</th>
+            <th>Harga</th>
+            <th>Preview</th>
+        </tr>
+        <tr>
+            <th>Asus ROG</th>
+            <th>• CPU              : 12th Gen i7-12700
+                • Display          : 16-inch FHD 16:10 IPS-level Refresh Rate 165Hz 
+                • GPU              : NVIDIA GeForce RTX 3060 Laptop GPU 6GB GDDR6
+                • Storage          : 512GB M.2 NVMe PCIe 4.0 SSD
+                • Keyboard         : Backlit Keyboard
+                • Operating System : Windows 11 Home
+                • Memory           : 16GB ram</th>
+            <th>Rp. 20,999,999</th>
+            <th><img src="Gambar/Rog.jpg" width="250" height="250"></th>
+            <tr>
+                <th>Steelseries mouse rival</th>
+                <th>• Sensor       : SteelSeries TrueMove Air
+                    • CPI          : 100 to 18,000 in 100 CPI Increments
+                    • IPS          : 400 on SteelSeries QcK surfaces
+                    • Polling      : 1000Hz or 1 ms
+                    • Sensor Type  : Optical
+                    • Acceleration : 40G</th>
+                <th>Rp. 999,999</th>
+                <th><img src="Gambar/Mouse.jpg" width="250" height="250"></th>
+            </tr>
+            <tr>
+                <th>Steelseries keyboard apex</th>
+                <th>• Type & Name     : OmniPoint 2.0 Adjustable HyperMagnetic Switches
+                    • Lifetime        : 100 Million Keypresses
+                    • Actuation Point : 0.1 mm to 4.0 mm
+                    • Response Time   : 0.7 ms
+                    • Force           : 45cN</th>
+                <th>Rp. 1,499,999</th>
+                <th><img src="Gambar/Keyboard.jpg" width="250" height="250"></th>
+            </tr>
+            <tr>
+                <th>Steelseries headset artic</th>
+                <th>Speaker Drivers
+                    Neodymium Drivers            : 40 mm
+                    Headphone Frequency Response : 20 to 20000 Hz
+                    Headphone Volume Control     : On Ear Cup
+                    Headphone Sensitivity        : 98 dBSPL
+                    Headphone Harmonic           : 3%</th>
+                <th>Rp. 1,299,999</th>
+                <th><img src="Gambar/Headset.jpg" width="250" height="250"></th>
+            </tr>
+    </table>
+
+    <h1>
+        About me
+    </h1>
+
+    <table>
+        <tr>
+            <th>Nama</th>
+            <th>No Hp</th>
+            <th>Alamat</th>
+        </tr>
+        <tr>
+            <th>M.Rizqi.H.R</th>
+            <th>1234567890</th>
+            <th>Yogyakarta</th>
+        </tr>
+    </table>
+
+    <h1>Jenis barang</h1>
+
+    <div id="myBtnContainer">
+        <button class="btn active" onclick="filterSelection('all')"> Show all </button>
+
+        <button class="btn" onclick="filterSelection('laptop')"> Laptop </button>
+
+        <button class="btn" onclick="filterSelection('mouse')"> Mouse </button>
+
+        <button class="btn" onclick="filterSelection('keyboard')"> Keyboard </button>
+
+        <button class="btn" onclick="filterSelection('headset')"> Headset </button>
+    </div>
+
+    <div class="container">
+        <div class="filterDiv laptop">Asus_Rog</div>
+        <div class="filterDiv laptop">Msi_Titan</div>
+        <div class="filterDiv laptop">Acer_Nitro</div>
+
+        <div class="filterDiv mouse">Steelseries_rival</div>
+        <div class="filterDiv mouse">Rexus_Xierra</div>
+        <div class="filterDiv mouse">Sades_Hunter</div>
+
+        <div class="filterDiv keyboard">Steelseries_Apex</div>
+        <div class="filterDiv keyboard">Rexus_Legionare</div>
+        <div class="filterDiv keyboard">Sades_Sperawolf</div>
+
+        <div class="filterDiv headset">Steelseries_Artic</div>
+        <div class="filterDiv headset">Rexus_Thundervox</div>
+        <div class="filterDiv headset">Sades_Spiritwolf</div>
+    </div>
+
+    <div class="footer">
+        
+        <div class="container">
+          <div class="row">
+
+            <div class="footer-col-1">
+              <h3>Nama : M.Rizqi.H.R</h3>
+              <p>NPM : 5220411033</p>
+              <div class="app-logo">
+                <img src="/Gambar/Logo.png">
+              </div>
+            </div>
+
+          </div>
+          <p class="copyright">Copyright Nama : M.Rizqi.H.R NPM : 5220411033</p>
+        </div>
+
+    </div>
+
+    <script>
+        filterSelection("all")
+        function filterSelection(c) {
+          var x, i;
+          x = document.getElementsByClassName("filterDiv");
+          if (c == "all") c = "";
+          for (i = 0; i < x.length; i++) {
+            RemoveClass(x[i], "show");
+            if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
+          }
+        }
+        
+        function AddClass(element, name) {
+          var i, arr1, arr2;
+          arr1 = element.className.split(" ");
+          arr2 = name.split(" ");
+          for (i = 0; i < arr2.length; i++) {
+            if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+          }
+        }
+        
+        function RemoveClass(element, name) {
+          var i, arr1, arr2;
+          arr1 = element.className.split(" ");
+          arr2 = name.split(" ");
+          for (i = 0; i < arr2.length; i++) {
+            while (arr1.indexOf(arr2[i]) > -1) {
+              arr1.splice(arr1.indexOf(arr2[i]), 1);     
+            }
+          }
+          element.className = arr1.join(" ");
+        }
+        
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+          btns[i].addEventListener("click", function(){
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+          });
+        }
+    </script>
+
+</body>
+</html>
